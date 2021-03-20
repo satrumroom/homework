@@ -28,10 +28,8 @@ public class Practice2_3 {
                 System.out.println("Friday");
                 break;
             case (6):
-                System.out.println("Saturday");
-                break;
             case (7):
-                System.out.println("Sunday");
+                System.out.println("Off-time");
                 break;
             default:
                 System.out.println("You entered the wrong number");
