@@ -22,10 +22,8 @@ public class Practice2_2 {
                 System.out.println("Thursday");
             }else if (a == 5){
                 System.out.println("Friday");
-            }else if (a == 6){
-                System.out.println("Saturday");
-            }else if (a == 7){
-                System.out.println("Sunday");
+            }else if (a == 6 || a == 7){
+                System.out.println("Weekend");
             }
         }else {
             System.out.println("You entered the wrong number");
