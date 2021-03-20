@@ -1,8 +1,8 @@
-package podplietnii;
+package com.ua.lemon.podplietnii.first.homework;
 
 import java.util.Scanner;
 
-public class Home1 {
+public class Practice1_1 {
 
     public static void main(String[] args) {
 
