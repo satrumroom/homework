@@ -1,5 +1,6 @@
 package com.ua.lemon.podplietnii.third.homework;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Practice3_5 {
@@ -11,9 +12,8 @@ public class Practice3_5 {
         System.out.println("Primordial array: ");
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(80) - 30;
-            System.out.print(array[i] + " ");
         }
-        System.out.println(" ");
+        System.out.println(Arrays.toString(array));
 
         for (int i = 0; i < array.length / 2; i++) {
             int intermediateValue = array[i];
@@ -22,8 +22,7 @@ public class Practice3_5 {
         }
 
         System.out.println("Inverted array: ");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
+        System.out.println(Arrays.toString(array));
+
     }
 }
