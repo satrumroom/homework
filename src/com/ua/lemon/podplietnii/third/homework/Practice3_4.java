@@ -12,6 +12,7 @@ public class Practice3_4 {
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(80) - 30;
         }
+
         System.out.println("Randomly filled array: ");
         System.out.println(Arrays.toString(array));
     }
