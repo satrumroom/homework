@@ -1,4 +1,4 @@
-package com.ua.lemon.kharkov;
+package com.ua.lemon.kharkov.homework_2;
 
 import java.util.*;
 
