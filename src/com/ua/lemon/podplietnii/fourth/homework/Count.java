@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Count {
-    int[] array = new int[10];
 
     public void count(int a) {
         for (int i = 1; i <= a; i++) {
@@ -27,7 +26,7 @@ public class Count {
         }
     }
 
-    public void randomArray() {
+    public void randomArray(int [] array) {
         Random random = new Random();
 
         for (int i = 0; i < array.length; i++) {
@@ -39,7 +38,7 @@ public class Count {
     }
 
 
-    public void invertedArray() {
+    public void invertedArray(int [] array) {
 
         for (int i = 0; i < array.length / 2; i++) {
             int intermediateValue = array[i];
@@ -52,7 +51,7 @@ public class Count {
 
     }
 
-    public void sortArray() {
+    public void sortArray(int [] array) {
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = array.length - 1; j > i; j--) {
                 if (array[j - 1] > array[j]) {
@@ -66,7 +65,7 @@ public class Count {
         System.out.println(Arrays.toString(array));
     }
 
-    public void sortInvertedArray() {
+    public void sortInvertedArray(int [] array) {
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = array.length - 1; j > i; j--) {
                 if (array[j - 1] < array[j]) {

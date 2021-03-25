@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Count num = new Count();
+        int [] array = new int[10];
 
         System.out.println("\n● First task  ↓ ");
         num.count(5);
@@ -21,17 +22,17 @@ public class Main {
 
 
         System.out.println("\n● Fourth task ↓ ");
-        num.randomArray();
+        num.randomArray(array);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
 
         System.out.println("\n● Fifth task  ↓");
-        num.invertedArray();
+        num.invertedArray(array);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         System.out.println("\n● Sixth task  ↓");
-        num.sortArray();
-        num.sortInvertedArray();
+        num.sortArray(array);
+        num.sortInvertedArray(array);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }
