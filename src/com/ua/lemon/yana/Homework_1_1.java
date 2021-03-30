@@ -1,4 +1,7 @@
 package com.ua.lemon.yana;
+import com.ua.lemon.kapustnyk.Person;
+import com.ua.lemon.kapustnyk.Student;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 public class Homework_1_1 {
