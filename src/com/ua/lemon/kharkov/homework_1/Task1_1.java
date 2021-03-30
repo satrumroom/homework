@@ -1,4 +1,4 @@
-package com.ua.lemon.kharkov;
+package com.ua.lemon.kharkov.homework_1;
 import java.util.*;
 
 public class Task1_1 {
