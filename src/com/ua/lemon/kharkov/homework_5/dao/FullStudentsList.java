@@ -9,9 +9,7 @@ import java.util.Scanner;
 public class FullStudentsList {
     public static void main(String ... args) {
         Scanner in = new Scanner(System.in);
-
-        StudentDao studentsList = new StudentDaoLocal();
-        List<Student> students = studentsList.getAll();
+        List<Student> students = AddNewStudent.getAll();
 
         for (int i = 0; i < students.size(); i++) {
             System.out.println(students.get(i));

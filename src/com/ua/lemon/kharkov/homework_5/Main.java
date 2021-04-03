@@ -6,6 +6,7 @@ import com.ua.lemon.kharkov.homework_5.dao.FullStudentsList;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String ... args) {
         Scanner in = new Scanner(System.in);
         int choice;
@@ -36,6 +37,5 @@ public class Main {
                 }
             }
         }
-
     }
 }

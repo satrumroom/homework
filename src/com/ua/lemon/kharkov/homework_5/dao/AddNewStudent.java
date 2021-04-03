@@ -4,8 +4,11 @@ import com.ua.lemon.kharkov.homework_5.Main;
 import com.ua.lemon.kharkov.homework_5.domain.Student;
 
 import java.util.Scanner;
+import java.util.List;
 
 public class AddNewStudent{
+    public static StudentDao studentList = new StudentDaoLocal();
+
     public static void main(String ... args) {
         defoultStudents();
         while (true) {
@@ -29,8 +32,8 @@ public class AddNewStudent{
             grade = in.nextDouble();
 
             Student s1 = new Student(name, surname, patronymic, group, grade);
-            StudentDao studentList = new StudentDaoLocal();
             studentList.add(s1);
+            System.out.println(studentList.getAll());
             System.out.println("Student added successfully.");
 
             String choice;
@@ -55,7 +58,7 @@ public class AddNewStudent{
         Student s10 = new Student("Nik","Raind","YanHo",5,50.5);
         Student s11 = new Student("Inna","Regul","Max",5,73.7);
 
-        StudentDao studentList = new StudentDaoLocal();
+        //StudentDao studentList = new StudentDaoLocal();
         studentList.add(s2);
         studentList.add(s3);
         studentList.add(s4);
@@ -66,6 +69,10 @@ public class AddNewStudent{
         studentList.add(s9);
         studentList.add(s10);
         studentList.add(s11);
+    }
+
+    public static List<Student> getAll(){
+        return studentList.getAll();
     }
 }
 
