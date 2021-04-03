@@ -8,7 +8,7 @@ public class StudentMAIN {
     public static void main(String[] args) {
         Student[] arr = new Student[10];
 
-
+        int count = 0;
         int choice;
         Scanner in = new Scanner(System.in);
         System.out.println("Select what you want to do");
@@ -25,22 +25,21 @@ public class StudentMAIN {
             switch (choice) {
                 case 1:
 
-                    System.out.println(Student.count);
-                    arr[Student.count] = new Student();
+                    arr[count] = new Student();
 
                     System.out.println("Input name");
-//                    arr[Student.count].setName(in.next());
-                    /*System.out.println("Input surname");
+                    arr[count].setName(in.next());
+                    System.out.println("Input surname");
 
-                    arr[Student.count].setSurName(in.next());
+                    arr[count].setSurName(in.next());
                     System.out.println("Input fathername");
 
-                    arr[Student.count].setFatherName(in.next());
+                    arr[count].setFatherName(in.next());
                     System.out.println("Input group number");
 
-                    arr[Student.count].setGroupNumber(in.nextInt());
+                    arr[count].setGroupNumber(in.nextInt());
                     System.out.println("Input point");
-                    arr[Student.count].setPoints(in.nextInt());*/
+                    arr[count].setPoints(in.nextInt());
                  /*   if(arr[Student.count].getPoints()<60) {
                         reservArrLess60[reservCount1] = new Student();
                         reservArrLess60[reservCount1].setPoints(arr[Student.count].getPoints());
@@ -60,8 +59,8 @@ public class StudentMAIN {
                         reservCount2++;
                     }*/
 
-
-                    Student.count++;
+                    Student.count = count;
+                    count++;
                     break;
                 case 2:
 
@@ -69,14 +68,18 @@ public class StudentMAIN {
                 case 3:
 
 
-                    int BestStudent = arr[0].getPoints();
+                    /*int BestStudent = arr[0].getPoints();
                     for (int i = 1; i < Student.count; i++) {
                         if (BestStudent < arr[i].getPoints()) {
                             BestStudent = arr[i].getPoints();
                         }
-                    }
-                    for (int i = 0; i < Student.count; i++) {
-                        if (BestStudent == arr[i].getPoints()) {
+                    }*/
+
+                    BestStudent bestStudent = new BestStudent();
+
+
+                    for (int i = 0; i < count; i++) {
+                        if (bestStudent.findBestStudent(arr) == arr[i].getPoints()) {
                             System.out.println("Best student");
                             System.out.println("Name " + arr[i].getName());
 
@@ -90,16 +93,20 @@ public class StudentMAIN {
                         }
 
                     }
+
+
                     break;
                 case 4:
-                    int WorstStudent = arr[0].getPoints();
+                    /*int WorstStudent = arr[0].getPoints();
                     for (int i = 1; i < Student.count; i++) {
                         if (WorstStudent > arr[i].getPoints()) {
                             WorstStudent = arr[i].getPoints();
                         }
-                    }
-                    for (int i = 0; i < Student.count; i++) {
-                        if (WorstStudent == arr[i].getPoints()) {
+                    }*/
+                    WorstStudent worstGroupMate = new WorstStudent();
+
+                    for (int i = 0; i < count; i++) {
+                        if (worstGroupMate.findWorstStudent(arr) == arr[i].getPoints()) {
                             System.out.println("Worst student");
                             System.out.println("Name " + arr[i].getName());
 
@@ -118,13 +125,13 @@ public class StudentMAIN {
                     break;
                 case 5:
 
-                    StudentsLess60 el = new StudentsLess60();
+                 /*   StudentsLess60 el = new StudentsLess60();
 
 
                     el.ArrayWithStudentsLess60(arr);
                     Student[] Less60 = new Student[el.getCountOfBadStudents()];
                     Less60 = el.ArrayWithStudentsLess60(arr);
-
+*/
                     /*  for (int i = 0; i < reservCount1; i++) {
                         System.out.print(reservArrLess60[i].getSurName()+" "+reservArrLess60[i].getName()+" "+
                                 reservArrLess60[i].getFatherName()+" "+
@@ -148,7 +155,7 @@ public class StudentMAIN {
 
                 case 7:
 
-                    for (int i = 0; i < Student.count; i++) {
+                    for (int i = 0; i < count; i++) {
                         System.out.print(arr[i].getSurName() + " " + arr[i].getName() + " " + arr[i].getFatherName() + " " +
                                 arr[i].getGroupNumber() + " " + arr[i].getPoints());
                         System.out.println();
