@@ -1,18 +1,18 @@
 package com.ua.lemon.kharkov.homework_5.domain;
 
-public class Student {
+public class Student implements Comparable{
     private String name;
-    private String surname;
+    private String lastName;
     private String patronymic;
     private int group;
-    private double grade;
+    private double mark;
 
     public Student(String name, String surname, String patronymic, int group, double grade){
         this.name = name;
-        this.surname= surname;
+        this.lastName = surname;
         this.patronymic = patronymic;
         this.group = group;
-        this.grade = grade;
+        this.mark = grade;
     }
 
     public String getName() {
@@ -23,12 +23,12 @@ public class Student {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPatronymic() {
@@ -47,22 +47,28 @@ public class Student {
         this.group = group;
     }
 
-    public double getGrade() {
-        return grade;
+    public double getMark() {
+        return mark;
     }
 
-    public void setGrade(double grade) {
-        this.grade = grade;
+    public void setMark(double mark) {
+        this.mark = this.mark;
     }
 
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
+                ", last name='" + lastName + '\'' +
                 ", patronymic='" + patronymic + '\'' +
                 ", group=" + group +
-                ", grade=" + grade +
+                ", grade=" + mark +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Student s = (Student) o;
+        return this.getLastName().compareTo(s.getLastName());
     }
 }

@@ -5,11 +5,13 @@ import com.ua.lemon.kharkov.homework_5.domain.Student;
 
 import java.util.Scanner;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class AddNewStudent{
+public class StudentJurnal {
     public static StudentDao studentList = new StudentDaoLocal();
 
-    public static void main(String ... args) {
+    public static void addNewStudents() {
         defoultStudents();
         while (true) {
             Scanner in = new Scanner(System.in);
@@ -18,7 +20,7 @@ public class AddNewStudent{
             String surname;
             String patronymic;
             int group;
-            double grade;
+            double mark;
 
             System.out.print("Enter name: ");
             name = in.nextLine();
@@ -29,11 +31,15 @@ public class AddNewStudent{
             System.out.print("Enter group: ");
             group = in.nextInt();
             System.out.print("Enter grade: ");
-            grade = in.nextDouble();
+            mark = in.nextDouble();
+            while (mark < 0 || mark > 100){
+                System.out.println("\t\t***Mistake***\nEnter a mark between 0 and 100.");
+                mark = in.nextDouble();
+            }
 
-            Student s1 = new Student(name, surname, patronymic, group, grade);
+            Student s1 = new Student(name, surname, patronymic, group, mark);
             studentList.add(s1);
-            System.out.println(studentList.getAll());
+            System.out.println(s1);
             System.out.println("Student added successfully.");
 
             String choice;
@@ -58,7 +64,6 @@ public class AddNewStudent{
         Student s10 = new Student("Nik","Raind","YanHo",5,50.5);
         Student s11 = new Student("Inna","Regul","Max",5,73.7);
 
-        //StudentDao studentList = new StudentDaoLocal();
         studentList.add(s2);
         studentList.add(s3);
         studentList.add(s4);
@@ -73,6 +78,12 @@ public class AddNewStudent{
 
     public static List<Student> getAll(){
         return studentList.getAll();
+    }
+
+    public static List<Student> startSortStudentByMark(){
+        SortStudentsMark sortStudentsMark = new SortStudentsMark();
+        Set<Student> studentList = new TreeSet<>(sortStudentsMark);
+        return (List<Student>) studentList;
     }
 }
 
