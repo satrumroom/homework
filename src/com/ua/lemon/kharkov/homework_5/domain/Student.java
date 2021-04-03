@@ -1,5 +1,7 @@
 package com.ua.lemon.kharkov.homework_5.domain;
 
+import java.util.List;
+
 public class Student implements Comparable{
     private String name;
     private String lastName;

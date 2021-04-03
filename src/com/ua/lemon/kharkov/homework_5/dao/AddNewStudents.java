@@ -1,14 +1,12 @@
 package com.ua.lemon.kharkov.homework_5.dao;
 
-import com.ua.lemon.kharkov.homework_5.Main;
+import com.ua.lemon.kharkov.homework_5.MainLogic;
 import com.ua.lemon.kharkov.homework_5.domain.Student;
 
 import java.util.Scanner;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
-public class StudentJurnal {
+public class AddNewStudents {
     public static StudentDao studentList = new StudentDaoLocal();
 
     public static void addNewStudents() {
@@ -47,7 +45,7 @@ public class StudentJurnal {
             choice = in.next();
 
             if (choice.equalsIgnoreCase("No")) {
-                Main.main();
+                MainLogic.main();
             }
         }
     }
@@ -78,12 +76,6 @@ public class StudentJurnal {
 
     public static List<Student> getAll(){
         return studentList.getAll();
-    }
-
-    public static List<Student> startSortStudentByMark(){
-        SortStudentsMark sortStudentsMark = new SortStudentsMark();
-        Set<Student> studentList = new TreeSet<>(sortStudentsMark);
-        return (List<Student>) studentList;
     }
 }
 
