@@ -41,12 +41,12 @@ public class StudentMAIN {
                     System.out.println("Input point");
                     arr[count].setPoints(in.nextInt());
                  /*   if(arr[Student.count].getPoints()<60) {
-                        reservArrLess60[reservCount1] = new Student();
-                        reservArrLess60[reservCount1].setPoints(arr[Student.count].getPoints());
-                        reservArrLess60[reservCount1].setName(arr[Student.count].getName());
-                        reservArrLess60[reservCount1].setSurName(arr[Student.count].getSurName());
-                        reservArrLess60[reservCount1].setFatherName(arr[Student.count].getFatherName());
-                        reservArrLess60[reservCount1].setGroupNumber(arr[Student.count].getGroupNumber());
+                        Less60[reservCount1] = new Student();
+                        Less60[reservCount1].setPoints(arr[Student.count].getPoints());
+                        Less60[reservCount1].setName(arr[Student.count].getName());
+                        Less60[reservCount1].setSurName(arr[Student.count].getSurName());
+                        Less60[reservCount1].setFatherName(arr[Student.count].getFatherName());
+                        Less60[reservCount1].setGroupNumber(arr[Student.count].getGroupNumber());
                         reservCount1++;
                     }
                     if(arr[Student.count].getPoints()>90) {
@@ -63,6 +63,18 @@ public class StudentMAIN {
                     count++;
                     break;
                 case 2:
+
+                    SortStudent sortStudent = new SortStudent();
+
+                    arr = sortStudent.sortedArrayOfStudents(arr,count);
+
+                    for (int i = 0; i < count; i++) {
+                        System.out.print(arr[i].getSurName() + " " + arr[i].getName() + " " + arr[i].getFatherName() + " " +
+                                arr[i].getGroupNumber() + " " + arr[i].getPoints());
+                        System.out.println();
+                    }
+
+
 
                     break;
                 case 3:
@@ -125,20 +137,45 @@ public class StudentMAIN {
                     break;
                 case 5:
 
-                 /*   StudentsLess60 el = new StudentsLess60();
+                    StudentsLess60 el = new StudentsLess60();
+                    Student[] Less60;
 
+                    Less60 = el.ArrayWithStudentsLess60(arr,count);
 
-                    el.ArrayWithStudentsLess60(arr);
-                    Student[] Less60 = new Student[el.getCountOfBadStudents()];
-                    Less60 = el.ArrayWithStudentsLess60(arr);
-*/
-                    /*  for (int i = 0; i < reservCount1; i++) {
-                        System.out.print(reservArrLess60[i].getSurName()+" "+reservArrLess60[i].getName()+" "+
-                                reservArrLess60[i].getFatherName()+" "+
-                                reservArrLess60[i].getGroupNumber()+" "+reservArrLess60[i].getPoints());
+                    for (int i = 0; i < Less60.length; i++) {
+                        System.out.print(Less60[i].getSurName()+" "+Less60[i].getName()+" "+
+                                Less60[i].getFatherName()+" "+
+                                Less60[i].getGroupNumber()+" "+Less60[i].getPoints());
                         System.out.println();
                     }
-*/
+
+                   /* int badStudents = 0;
+
+                        for (int i = 0; i < count; i++) {
+
+                            if (arr[i].getPoints() < 60) {
+
+                                Less60[badStudents] = new Student();
+                                Less60[badStudents].setPoints(arr[i].getPoints());
+                                Less60[badStudents].setName(arr[i].getName());
+                                Less60[badStudents].setSurName(arr[i].getSurName());
+                                Less60[badStudents].setFatherName(arr[i].getFatherName());
+                                Less60[badStudents].setGroupNumber(arr[i].getGroupNumber());
+
+                                badStudents++;
+                            }
+
+
+                        }
+
+                 //   System.out.println(el.getbadStudents());
+                    for (int i = 0; i < Less60.length; i++) {
+                        System.out.print(Less60[i].getSurName()+" "+Less60[i].getName()+" "+
+                                Less60[i].getFatherName()+" "+
+                                Less60[i].getGroupNumber()+" "+Less60[i].getPoints());
+                        System.out.println();
+                    }*/
+
                     break;
 
                 case 6:
@@ -151,6 +188,20 @@ public class StudentMAIN {
                     }
 
   */
+                    var el2 = new StudentsMore90();
+                    Student[] More90;
+
+                    More90 = el2.ArrayWithStudentsMore90(arr,count);
+
+                    for (int i = 0; i < More90.length; i++) {
+                        System.out.print(More90[i].getSurName()+" "+More90[i].getName()+" "+
+                                More90[i].getFatherName()+" "+
+                                More90[i].getGroupNumber()+" "+More90[i].getPoints());
+                        System.out.println();
+                    }
+
+
+
                     break;
 
                 case 7:
