@@ -1,6 +1,6 @@
 package com.ua.lemon.kharkov.Lesson;
 
-import com.ua.lemon.kharkov.Lesson.dao.StudentsMethod;
+import com.ua.lemon.kharkov.Lesson.dao.StudentDaoLocal;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class MainLogic {
 
         int choice;
 
-        StudentsMethod.defoultStudents();
+        StudentDaoLocal.defoultStudents();
 
         System.out.println("\t*** Choose an action ***\n" +
                 "1) Add new student.\n" +
@@ -28,17 +28,17 @@ public class MainLogic {
         }else {
             switch (choice){
                 case (1):
-                    StudentsMethod.addNewStudents();
+                    StudentDaoLocal.addNewStudents();
                 case (2):
-                    StudentsMethod.sortStudentsByName();
+                    StudentDaoLocal.sortStudentsByName();
                 case (3):
-                    StudentsMethod.sortStudentsByLastName();
+                    StudentDaoLocal.sortStudentsByLastName();
                 case (4):
-                    StudentsMethod.sortStudentMarkOverSixty();
+                    StudentDaoLocal.sortStudentMarkOverSixty();
                 case (5):
-                    StudentsMethod.sortStudentMarkLessThirty();
+                    StudentDaoLocal.sortStudentMarkLessThirty();
                 case (6):
-                    StudentsMethod.fullStudentsList();
+                    StudentDaoLocal.fullStudentsList();
                 case (7):
                     System.exit(0);
             }
