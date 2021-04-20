@@ -1,5 +1,7 @@
 package com.ua.lemon.kapustnyk;
 
+import com.ua.lemon.kapustnyk.onion.domain.Student;
+
 public class StudentJournal {
 
     public Student[] sortStudentsByMark(Student[] students) {

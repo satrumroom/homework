@@ -1,8 +1,8 @@
-package com.ua.lemon.kapustnyk;
+package com.ua.lemon.kapustnyk.onion.domain;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable{
 
     private String name;
     private double mark;
@@ -55,5 +55,11 @@ public class Student {
                 "name='" + name + '\'' +
                 ", mark=" + mark +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Student s = (Student) o;
+        return this.getName().compareTo(s.getName());
     }
 }
