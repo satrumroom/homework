@@ -44,7 +44,7 @@ public class Main {
                             Laptop l1 = new Laptop(model, price, SN);
 
                             laptopList.addLaptop(l1);
-                            laptopList.WriteLaptopFile();
+                            laptopList.writeLaptopFile();
 
                     case (2):
                         List<Laptop> readList = laptopList.getAll();

@@ -18,7 +18,7 @@ public class LaptopDaoFile implements LaptopDao {
     InputStream inputStream = null;
     ObjectInputStream objectInputStream = null;
 
-    public void WriteLaptopFile() {
+    public void writeLaptopFile() {
         try {
             outputStream = new FileOutputStream("laptop.txt");
             objectOutputStream = new ObjectOutputStream(outputStream);
@@ -39,7 +39,7 @@ public class LaptopDaoFile implements LaptopDao {
         Main.main();
     }
 
-    public void ReadLaptopFile() {
+    public void readLaptopFile() {
         try {
             inputStream = new FileInputStream("laptop.txt");
             objectInputStream = new ObjectInputStream(inputStream);
@@ -61,7 +61,7 @@ public class LaptopDaoFile implements LaptopDao {
 
     @Override
     public List<Laptop> getAll() {
-        ReadLaptopFile();
+        readLaptopFile();
         return readLaptop;
     }
 
@@ -69,7 +69,7 @@ public class LaptopDaoFile implements LaptopDao {
     public Laptop getLaptopByModel(String model) throws LaptopNotFoundException {
 
         if (readLaptop.isEmpty()) {
-            ReadLaptopFile();
+            readLaptopFile();
         }
 
         for (Laptop laptop : readLaptop) {
