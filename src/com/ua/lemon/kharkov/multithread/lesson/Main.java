@@ -4,6 +4,12 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+
+        ImplThread implThread = new ImplThread();
+        Thread t1 = new Thread(implThread);
+
+        t1.start();
+
         for (int i = 0; i < 10; i++) {
             try {
                 Thread.sleep(new Random().nextInt(2000));
@@ -12,11 +18,6 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
-        ImplThread implThread = new ImplThread();
-        Thread t1 = new Thread(implThread);
-
-        t1.start();
 
         try {
             t1.join();
