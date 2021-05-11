@@ -4,4 +4,5 @@ public class Laptop {
 
     private String name;
     private int memory;
+    private String uuid;
 }
