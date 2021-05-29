@@ -7,17 +7,31 @@ import java.io.Serializable;
 public class Laptop implements Serializable {
 
     private static final long serialVersionUID = 4366718818046465395L;
+    private int id;
     private String model;
-    private Double prise;
-    private Integer SN;
+    private double prise;
+    private int SN;
 
     public Laptop(){
     }
 
-    public Laptop(String model, Double prise, Integer SN){
+    public Laptop(int id, String model, double prise, int SN){
+        this.id = id;
         this.model = model;
         this.prise = prise;
         this.SN = SN;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getModel() {
@@ -47,7 +61,8 @@ public class Laptop implements Serializable {
     @Override
     public String toString() {
         return "Laptop{" +
-                "model='" + model + '\'' +
+                "id=" + id +
+                ", model='" + model + '\'' +
                 ", prise=" + prise +
                 ", SN=" + SN +
                 '}';

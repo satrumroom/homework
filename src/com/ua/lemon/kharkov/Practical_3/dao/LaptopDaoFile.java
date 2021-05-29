@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LaptopDaoFile implements LaptopDao {
+/*public class LaptopDaoFile implements LaptopDao {
 
     private List<Laptop> laptopList = new ArrayList<>();
     private List<Laptop> readLaptop = new ArrayList<>();
@@ -79,4 +79,4 @@ public class LaptopDaoFile implements LaptopDao {
         }
         return null;
     }
-}
+}*/

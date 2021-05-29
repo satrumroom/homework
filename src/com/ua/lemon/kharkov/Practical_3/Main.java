@@ -1,16 +1,18 @@
 package com.ua.lemon.kharkov.Practical_3;
 
-import com.ua.lemon.kharkov.Practical_3.dao.LaptopDaoFile;
+import com.ua.lemon.kharkov.Practical_3.dao.LaptopDaoDb;
 import com.ua.lemon.kharkov.Practical_3.domain.Laptop;
 import com.ua.lemon.kharkov.Practical_3.сatchError.LaptopNotFoundException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static LaptopDaoFile laptopList = new LaptopDaoFile();
-
     public static void main(String ... args) {
+
+        LaptopDaoDb laptopDaoDb = new LaptopDaoDb();
+        List<Laptop> laptopList = new ArrayList<>();
 
         Scanner in = new Scanner(System.in);
 
@@ -18,8 +20,8 @@ public class Main {
 
         while (true) {
 
-            System.out.println("\n1) Add new laptop model\n" +
-                    "2) Get all laptop\n" +
+            System.out.println("\n1) Get All\n" +
+                    "2) Delete By Id\n" +
                     "3) Find by model laptop\n" +
                     "4) Exit");
 
@@ -32,43 +34,17 @@ public class Main {
             }else {
                 switch (choice){
                     case (1):
-                            System.out.println("Enter model");
-                            String model = in.next();
-
-                            System.out.println("Enter price");
-                            Double price = in.nextDouble();
-
-                            System.out.println("Enter serial number");
-                            Integer SN = in.nextInt();
-
-                            Laptop l1 = new Laptop(model, price, SN);
-
-                            laptopList.addLaptop(l1);
-                            laptopList.writeLaptopFile();
-
-                    case (2):
-                        List<Laptop> readList = laptopList.getAll();
-                        System.out.println(readList);
+                        laptopList = laptopDaoDb.getAll();
+                        System.out.println(laptopList);
 
                         Main.main();
-
+                    case (2):
+                        int idNum = in.nextInt();
+                        laptopDaoDb.deleteById(idNum);
+                        Main.main();
                     case (3):
-                        System.out.println("Enter model");
-                        String findModel = in.next();
-
-                        try {
-                            Laptop laptop = laptopList.getLaptopByModel(findModel);
-
-                            if (laptop == null){
-                                throw new LaptopNotFoundException("Laptop not found " + findModel);
-                            }else {
-                                System.out.println(laptop);
-                            }
-                        } catch (LaptopNotFoundException e) {
-                            e.printStackTrace();
-                        }
-
-
+                        String model = in.next();
+                        laptopDaoDb.findLaptopByModel(model);
                         Main.main();
                     case (4):
                         System.exit(0);
