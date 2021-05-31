@@ -11,9 +11,9 @@ public class Main {
         List<Person> personList = personDao.getAll();
         System.out.println(personList);
 
-        Person p1 = new Person(0, "Oleg", "Olegov", 22);
-        personDao.deleteById(2);
-        personList = personDao.getByName("Oleg");
+        Person p1 = new Person(0, "Serg", "Olegov", 22);
+     //   personDao.addPerson(p1);
+        personList = personDao.getByName("Serg");
         System.out.println(personList);
     }
 }

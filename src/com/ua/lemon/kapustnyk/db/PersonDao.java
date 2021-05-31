@@ -13,11 +13,13 @@ public class PersonDao {
     public static final String SELECT_ALL = "select * from person";
     public static final String SELECT_BY_NAME = "select * from person where firstName like ?";
     public static final String INSERT_PERSON = "INSERT INTO PERSON (firstName, lastName, age) VALUES (?, ?, ?)";
+    public static final String INSERT_PERSON1 = "INSERT INTO PERSON1 (firstName, lastName, age) VALUES (?, ?, ?)";
     public static final String DELETE_PERSON = "DELETE FROM PERSON WHERE ID = ?";
 
     private Connection connection = null;
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
+    private PreparedStatement preparedStatement2 = null;
     private ResultSet resultSet = null;
 
 
@@ -60,15 +62,39 @@ public class PersonDao {
     public void addPerson(Person person) {
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(INSERT_PERSON);
 
+            //    for (int i = 0; i < 100; i++) {
             preparedStatement.setString(1, person.getFirstName());
             preparedStatement.setString(2, person.getLastName());
             preparedStatement.setInt(3, person.getAge());
 
+           // throw new SQLException();
             preparedStatement.executeUpdate();
+
+            preparedStatement2 = connection.prepareStatement(INSERT_PERSON1);
+
+            //    for (int i = 0; i < 100; i++) {
+            preparedStatement2.setString(1, person.getFirstName());
+            preparedStatement2.setString(2, person.getLastName());
+            preparedStatement2.setInt(3, person.getAge());
+
+            // throw new SQLException();
+            preparedStatement2.executeUpdate();
+//            preparedStatement.execute();
+            //   }
+
+            //      preparedStatement.executeBatch();
+//
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
         } finally {
             try {
                 connection.close();
