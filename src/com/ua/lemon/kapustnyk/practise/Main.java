@@ -12,31 +12,31 @@ public class Main {
 //        4 возвращает среднее арифметическое массива
 //        5 возвращает сумму элементов массива
 //        6 возвращает произведение элементов
-        List<String> list = new ArrayList<>();
-        list.add("hello");
-        list.add("hello");
-        list.add("hello");
-        list.add("hello");
-        list.get(0);
-        list.forEach(s -> {
-            System.out.println(s);
-        });
-        System.out.println();
-        var iter = list.iterator();
-        while (iter.hasNext()) {
-            System.out.println(iter.next());
-           // list.iterator().next();
-        }
-
-        Student s1 = new Student("Alex", 44);
-        List<Student> students = new ArrayList<>();
-        students.add(s1);
-        Collections.sort(students, (o1, o2) -> o1.getName().compareTo(o2.getName()));
-        Collections.sort(students, (o1, o2) -> {
-            Double d1 = o1.getMark();
-            Double d2 = o2.getMark();
-            return d2.compareTo(d1);
-        });
+//        List<String> list = new ArrayList<>();
+//        list.add("hello");
+//        list.add("hello");
+//        list.add("hello");
+//        list.add("hello");
+//        list.get(0);
+//        list.forEach(s -> {
+//            System.out.println(s);
+//        });
+//        System.out.println();
+//        var iter = list.iterator();
+//        while (iter.hasNext()) {
+//            System.out.println(iter.next());
+//           // list.iterator().next();
+//        }
+//
+//        Student s1 = new Student("Alex", 44);
+//        List<Student> students = new ArrayList<>();
+//        students.add(s1);
+//        Collections.sort(students, (o1, o2) -> o1.getName().compareTo(o2.getName()));
+//        Collections.sort(students, (o1, o2) -> {
+//            Double d1 = o1.getMark();
+//            Double d2 = o2.getMark();
+//            return d2.compareTo(d1);
+//        });
 
 /*
     класс студент с полями: имя, фамилия, группа, балл (0 - 100)

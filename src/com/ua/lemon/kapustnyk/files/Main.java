@@ -98,42 +98,42 @@ public class Main {
 //        } catch (ClassNotFoundException e) {
 //            e.printStackTrace();
 //        }
-        Path path = Path.of("testDirectory","new.txt");
-
-        String result = "";
-
-        for (int i = 0; i < phoneList.size(); i++) {
-            result += phoneList.get(i).getModel() + "\n";
-        }
-        System.out.println(result);
-        try {
-            Files.write(path, result.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            List<String> res2 = Files.readAllLines(path);
-            System.out.println(res2);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        File file = new File(path.toString());
-        System.out.println(file.canRead());
-        System.out.println(file.canWrite());
-        System.out.println(file.canExecute());
-        System.out.println(file.isDirectory());
-        System.out.println(file.isFile());
-        System.out.println(file.getAbsolutePath());
-        System.out.println(file.getPath());
-        System.out.println(file.getName());
-        System.out.println(file.getFreeSpace() / 1024 / 1024 / 1024);
-        System.out.println(file.getTotalSpace() / 1024 / 1024 / 1024);
-//        fileDirectory.mkdir();
-
-        Optional<Integer> int1 = Optional.ofNullable(new Integer(4));
-        System.out.println(int1.isPresent());
+//        Path path = Path.of("testDirectory","new.txt");
+//
+//        String result = "";
+//
+//        for (int i = 0; i < phoneList.size(); i++) {
+//            result += phoneList.get(i).getModel() + "\n";
+//        }
+//        System.out.println(result);
+//        try {
+//            Files.write(path, result.getBytes());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            List<String> res2 = Files.readAllLines(path);
+//            System.out.println(res2);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        File file = new File(path.toString());
+//        System.out.println(file.canRead());
+//        System.out.println(file.canWrite());
+//        System.out.println(file.canExecute());
+//        System.out.println(file.isDirectory());
+//        System.out.println(file.isFile());
+//        System.out.println(file.getAbsolutePath());
+//        System.out.println(file.getPath());
+//        System.out.println(file.getName());
+//        System.out.println(file.getFreeSpace() / 1024 / 1024 / 1024);
+//        System.out.println(file.getTotalSpace() / 1024 / 1024 / 1024);
+////        fileDirectory.mkdir();
+//
+//        Optional<Integer> int1 = Optional.ofNullable(new Integer(4));
+//        System.out.println(int1.isPresent());
 
 
     }

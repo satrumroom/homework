@@ -41,7 +41,7 @@ public class Main {
             return d1.compareTo(d2);
         });
 
-        List.of(new int[5]);
+//        List.of(new int[5]);
 
         //создать лист из double и заполнить его 10 000 элементами
 

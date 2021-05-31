@@ -61,17 +61,17 @@ public class Main {
         System.out.println(firstMap.replace(2, "NewValue"));
         firstMap.clear();
 
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(1,1);
-        map.put(2,1);
-
-        var map2 = Map.of(1, 1, 2, 1);
-        map2.put(1 ,3);
-        System.out.println(map2);
-
-        int a = 4;
-        int b = 0;
-        System.out.println(a / b);
+//        Map<Integer, Integer> map = new HashMap<>();
+//        map.put(1,1);
+//        map.put(2,1);
+//
+//        var map2 = Map.of(1, 1, 2, 1);
+//        map2.put(1 ,3);
+//        System.out.println(map2);
+//
+//        int a = 4;
+//        int b = 0;
+//        System.out.println(a / b);
 
       //  firstMap.put(null, "Second");
 //        System.out.println(firstMap);
